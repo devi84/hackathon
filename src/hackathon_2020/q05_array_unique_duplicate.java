@@ -30,9 +30,11 @@ public class q05_array_unique_duplicate {
 			
 			}
 			else
+				
 			{al.add(a[i]);
+			s.remove(a[i]);
 			
-			
+		
 		}
 		}
 		System.out.println(" Given Array :");

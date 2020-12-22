@@ -8,8 +8,8 @@ public class q13_reversestringintheword {
 		// TODO Auto-generated method stub
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Enter the string: ");
-		String str=sc.nextLine();
-		reverse_word(str);
+		//String str=sc.nextLine();
+		/*reverse_word(str);
 	}
 		public static void reverse_word(String str)
 		{
@@ -25,10 +25,15 @@ public class q13_reversestringintheword {
 				str_reverse+=" ";
 			}
 		System.out.println(str_reverse);
-		
+		*/
+		Scanner scan = new Scanner(System.in);
+		System.out.println("enter input string");
+		String str=scan.nextLine();
+		for(int i=str.length()-1;i>=0;i--){
+		System.out.print(str.charAt(i));
 			
 		}
 
-	
+	}
 
 }
