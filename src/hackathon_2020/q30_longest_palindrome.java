@@ -9,30 +9,52 @@ public class q30_longest_palindrome {
 		Scanner sc=new Scanner(System.in);
 		String str=sc.nextLine();
 		String str1[]=str.split(" ");
-		int long_str_length=str1[0].length();
-		String long_str=str1[0];
 		
+		String palindrome_string[]=new String[5];
+		String reverse_str=" ";
+	    int k=0;
+		//str=welcome madam hi malayalam
 		for(int i=0;i<str1.length;i++)
-		{
-			for(int j=i+1;j<str1.length-1;j++)
-		      { if(str1[i].length()>str1[j].length())
-				{ long_str=str1[i];
-				if(i!=str1.length)
-				{System.out.println("i:"+i+"\tStr1[i]:"+str1[i]+"long:"+long_str);
-				//continue;
-				}
+		{ if(str1[i]!=" ")
+		{ for(int j=str1[i].length()-1;j>=0;j--)
+		{   
+			reverse_str+=str1[i].charAt(j);
+			
 				
-			}
-		else 
-		{long_str=long_str;
-			//continue;
 		}
-		  
-		      }
+		
+		if((reverse_str.trim()).equals(str1[i]))
+		{
+			palindrome_string[k]=reverse_str.trim();
+			//System.out.println("palindrome:  "+ palindrome_string[k]);
+			k++;
+		}
+		reverse_str=" ";
+		//System.out.println("palindrome:  "+ palindrome_string[k]);
 			
 		}
-		System.out.println(long_str);
-
+		/*for(int a=0; a<palindrome_string.length;a++)
+		{  if(palindrome_string[a]!=null)
+		{
+			System.out.println(palindrome_string[a]);
+		}
+		}*/
+			
+		}
+		//System.out.println("length of palindrome_string: "+palindrome_string.length);
+		String palindrome_long= palindrome_string[0];
+		
+		for(int z=0;z<palindrome_string.length-1;z++)
+		{   if(palindrome_string[z]!=null)
+		{
+			if(palindrome_long.length() < palindrome_string[z].length())
+			{
+				palindrome_long=palindrome_string[z];
+			}
+		}
+		}
+		
+		System.out.println("Longest palindrome of Given word is:  " + palindrome_long );
 	}
 
 }
